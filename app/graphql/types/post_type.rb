@@ -4,6 +4,6 @@ module Types
   class PostType < Types::BaseObject
     description "A blog post"
     field :title, String
-    field :rating, Integer
+    field :content, String
   end
 end

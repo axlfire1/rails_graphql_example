@@ -67,5 +67,9 @@ group :test do
   gem "selenium-webdriver"
 end
 
+group :development, :test do
+  gem 'byebug'
+end
+
 gem 'graphql', '~> 2.1', '>= 2.1.5'
 gem "graphiql-rails", group: :development
