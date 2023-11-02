@@ -18,16 +18,18 @@ module Types
       ids.map { |id| context.schema.object_from_id(id, context) }
     end
 
-    # Add root-level fields here.
-    # They will be entry points for queries on your schema.
-
     field :find_post, Types::PostType, "Find a post by ID" do
       argument :id, ID
     end
 
-    # Then provide an implementation:
     def find_post(id:)
       Post.find(id)
+    end
+
+    field :post_list, [Types::PostType, null: true], "list of posts", null: false
+
+    def post_list
+      Post.all
     end
   end
 end
