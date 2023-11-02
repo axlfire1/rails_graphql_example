@@ -1,24 +1,38 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Steps to build and use this project
+                               
 
-Things you may want to cover:
+### This example adds an example of a model (Post) and its CRUD in graphql 
 
-* Ruby version
+```bash
+rails server -p 3000
+```
 
-* System dependencies
+### As an example of queries it can be following:
 
-* Configuration
+```json
+query FindPost {
+    findPost(id: 1) {
+        content
+        title
+    }
+} 
+```
 
-* Database creation
+```json
+mutation CreatePost {
+    createPost(input : {
+        content: "my content",
+        title: "my titke"
+    }
+    ) {
+        content
+        title
+    }
+}
+```
 
-* Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## you're done!
